@@ -1,8 +1,8 @@
 export const navItems = [
-  { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
-  { name: "Contact", link: "#contact" },
+  { name: "主页", link: "#about" },
+  { name: "项目介绍", link: "#projects" },
+  { name: "客户评价", link: "#testimonials" },
+  { name: "联系我们", link: "#contact" },
 ];
 
 export const gridItems = [
