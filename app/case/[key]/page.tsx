@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { navItems } from "@/data";
+import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import { TracingBeam } from "@/components/ui/TracingBeam";
 
 const CasePost = ({
@@ -12,6 +14,7 @@ const CasePost = ({
 }) => { 
   return (
     <TracingBeam className="px-6">
+      <FloatingNav navItems={navItems} />
       <div className="max-w-2xl mx-auto antialiased pt-4 relative">
         <div>{params.key}</div>
         {dummyContent.map((item, index) => (

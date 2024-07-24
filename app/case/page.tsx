@@ -1,7 +1,10 @@
+import { FloatingNav } from "@/components/ui/FloatingNavbar";
+import { navItems } from "@/data";
+
 const Case = () => {
   return (
     <div>
-      Case
+      <FloatingNav navItems={navItems} />
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import React from "react";
+import { useRouter } from 'next/navigation'
 import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
 import {
   IconArrowWaveRightUp,
@@ -10,9 +11,16 @@ import {
   IconSignature,
   IconTableColumn,
 } from "@tabler/icons-react";
+import { BackgroundGradient } from "./ui/BackgroundGradient"
+import {Tabs, Tab, Card, CardBody, CardHeader} from "@nextui-org/react";
 import Image from "next/image";
 
 const RecentProjects = () => {
+  const router = useRouter()
+  const goCasePage = (key: string) => {
+    router.push(`/case/${key}`)
+  }
+
   return (
     <div>
       <div className="m-20">
@@ -21,21 +29,54 @@ const RecentProjects = () => {
           <span className="text-purple">集合</span>
         </h1>
       </div>
-      <BentoGrid className="max-w-4xl mx-auto">
-        {items.map((item, i) => (
-          <BentoGridItem
-            key={i}
-            title={item.title}
-            description={item.description}
-            header={item.header}
-            icon={item.icon}
-            className={i === 3 || i === 6 ? "md:col-span-2" : ""}
-          />
-        ))}
-      </BentoGrid>
+      <div className="flex max-w-4xl mx-auto flex-col">
+        <Tabs aria-label="Dynamic tabs" items={tabs} size="lg">
+          {(item) => (
+            <Tab key={item.id} title={item.label}>
+              <BackgroundGradient className="rounded-[22px] p-4 bg-white dark:bg-zinc-900">
+                <Card>
+                  <CardBody>
+                    <div>{item.content}</div>
+                    <BentoGrid className="max-w-4xl mx-auto">
+                      {projectLists.map((list, i) => (
+                        <BentoGridItem
+                          key={i}
+                          title={list.title}
+                          description={list.description}
+                          header={list.header}
+                          icon={list.icon}
+                          onClick={() => goCasePage(list.title)}
+                          className={i === 3 || i === 6 ? "md:col-span-2" : ""}
+                        />
+                      ))}
+                    </BentoGrid>
+                  </CardBody>
+                </Card>  
+              </BackgroundGradient>
+            </Tab>
+          )}
+        </Tabs>
+      </div>
     </div>
   );
 }
+const tabs = [
+  {
+    id: "photos",
+    label: "Photos",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    id: "music",
+    label: "Music",
+    content: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  },
+  {
+    id: "videos",
+    label: "Videos",
+    content: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  }
+];
 const Skeleton = () => {
   return (
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100">
@@ -49,7 +90,7 @@ const Skeleton = () => {
   </div>
   )
 };
-const items = [
+const projectLists = [
   {
     title: "The Dawn of Innovation",
     description: "Explore the birth of groundbreaking ideas and inventions.",
