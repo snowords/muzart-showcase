@@ -105,6 +105,17 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
 
+**Docker 部署 Showcase**
+
+```bash
+docker build -t muzart-showcase-image -f docker/Dockerfile .
+docker run -d -p 80:3000 muzart-showcase-image
+```
+
+- 访问 SoybeanAdmin
+
+打开本地浏览器访问`http://localhost`
+
 ## <a name="snippets">🕸️ Snippets</a>
 
 <details>

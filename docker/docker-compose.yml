@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  showcase-app:
+    container_name: muzart-showcase
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+      args:
+        ENV_VARIABLE: ${ENV_VARIABLE}
+        NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
+    restart: always
+    ports:
+      - 80:3000
+    networks:
+      - supabase_default
+
+  # Add more containers below (nginx, postgres, etc.)
+
+# Define a network, which allows containers to communicate
+# with each other, by using their container name as a hostname
+networks:
+  supabase_default:
+    external: true
