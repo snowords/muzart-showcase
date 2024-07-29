@@ -35,7 +35,7 @@ const Hero = () => {
     },
   ];
   return (
-    <div className="pb-20 pt-36">
+    <div className="pb-20 pt-36 min-h-screen">
       {/**
        *  UI: Spotlights
        *  Link: https://ui.aceternity.com/components/spotlight
@@ -92,7 +92,7 @@ const Hero = () => {
 
            <TypewriterEffectSmooth words={words} />
 
-          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
+          <p className="text-center md:tracking-wider mb-10 text-sm md:text-lg lg:text-2xl">
             我们致力于成为青岛乃至全国领先的广告设计公司，通过创新和卓越的设计服务，助力客户品牌成长，实现共赢
           </p>
 

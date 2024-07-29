@@ -1,5 +1,6 @@
+"use client"
 import { cn } from "@/lib/utils";
-import React from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation'
 import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
 import {
@@ -14,8 +15,33 @@ import {
 import { BackgroundGradient } from "./ui/BackgroundGradient"
 import {Tabs, Tab, Card, CardBody, CardHeader} from "@nextui-org/react";
 import Image from "next/image";
+import { createClient } from '@/lib/supabase/client'
+import { getPublicUrl } from '@/lib/supabase/tools'
+
+const supabase = createClient();
 
 const RecentProjects = () => {
+
+  const [typeList, setTypeList] = useState([])
+  const [projectList, setProjectList] = useState([])
+
+  useEffect(() => {
+    getTypeList()
+    getProjectList()
+  }, []);
+
+  const getTypeList = async () => {
+    const { data } = await supabase.from('project-type').select('*')
+    console.log('supabase cms', data)
+    setTypeList(data)
+  }
+
+  const getProjectList = async () => {
+    const { data } = await supabase.from('project').select('*')
+    console.log('project data', data)
+    setProjectList(data)
+  }
+
   const router = useRouter()
   const goCasePage = (key: string) => {
     router.push(`/case/${key}`)
@@ -30,21 +56,28 @@ const RecentProjects = () => {
         </h1>
       </div>
       <div className="flex max-w-4xl mx-auto flex-col">
-        <Tabs aria-label="Dynamic tabs" items={tabs} size="lg">
+        <Tabs aria-label="Dynamic tabs" items={typeList} size="lg">
           {(item) => (
             <Tab key={item.id} title={item.label}>
               <BackgroundGradient className="rounded-[22px] p-4 bg-white dark:bg-zinc-900">
                 <Card>
                   <CardBody>
-                    <div>{item.content}</div>
                     <BentoGrid className="max-w-4xl mx-auto">
-                      {projectLists.map((list, i) => (
+                      {projectList.map((list, i) => (
                         <BentoGridItem
                           key={i}
-                          title={list.title}
-                          description={list.description}
-                          header={list.header}
-                          icon={list.icon}
+                          title={list.name}
+                          cover={
+                            <Image
+                              src={getPublicUrl('cloud-space', list.group, list.cover)}
+                              alt="cover"
+                              height="1000"
+                              width="1000"
+                              style={{
+                                objectFit: 'cover',
+                              }}
+                            />
+                          }
                           onClick={() => goCasePage(list.title)}
                           className={i === 3 || i === 6 ? "md:col-span-2" : ""}
                         />
@@ -60,29 +93,12 @@ const RecentProjects = () => {
     </div>
   );
 }
-const tabs = [
-  {
-    id: "photos",
-    label: "Photos",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-  },
-  {
-    id: "music",
-    label: "Music",
-    content: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-  },
-  {
-    id: "videos",
-    label: "Videos",
-    content: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  }
-];
 const Skeleton = () => {
   return (
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100">
     <Image
-      src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
-      alt="avatar"
+      src={getPublicUrl('cloud-space', item.group, item.cover)}
+      alt="cover"
       height="100"
       width="100"
       className="w-full h-full"

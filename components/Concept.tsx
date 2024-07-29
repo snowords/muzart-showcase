@@ -14,18 +14,26 @@ import Image from "next/image";
 
 const Concept = () => {
   return (
-    <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] z-10">
-      {items.map((item, i) => (
-        <BentoGridItem
-          key={i}
-          title={item.title}
-          description={item.description}
-          header={item.header}
-          className={cn("[&>p:text-lg]", item.className)}
-          icon={item.icon}
-        />
-      ))}
-    </BentoGrid>
+    <div className="my-20">
+      <div className="m-20">
+        <h1 className="heading">
+          设计{" "}
+          <span className="text-purple">宗旨</span>
+        </h1>
+      </div>
+      <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] z-10">
+        {items.map((item, i) => (
+          <BentoGridItem
+            key={i}
+            title={item.title}
+            description={item.description}
+            header={item.header}
+            className={cn("[&>p:text-lg]", item.className)}
+            icon={item.icon}
+          />
+        ))}
+      </BentoGrid>
+    </div>
   );
 }
 

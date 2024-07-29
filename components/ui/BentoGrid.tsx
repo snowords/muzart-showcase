@@ -24,7 +24,7 @@ export const BentoGridItem = ({
   className,
   title,
   description,
-  header,
+  cover,
   icon,
   img,
   imgClassName,
@@ -36,7 +36,7 @@ export const BentoGridItem = ({
   className?: string;
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
-  header?: React.ReactNode;
+  cover?: React.ReactNode;
   icon?: React.ReactNode;
   imgClassName?: any;
   titleClassName?: any;
@@ -52,7 +52,9 @@ export const BentoGridItem = ({
       )}
       onClick={onClick}
     >
-      {header}
+      <div className="relative overflow-hidden">
+        {cover}
+      </div>
       <div className="group-hover/bento:translate-x-2 transition duration-200">
         {icon}
         <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
