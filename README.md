@@ -112,6 +112,15 @@ docker build -t muzart-showcase-image -f docker/Dockerfile .
 docker run -d -p 80:3000 muzart-showcase-image
 ```
 
+**Docker Compose 部署**
+
+```bash
+cd ./docker
+docker compose up -d
+# 关闭
+docker compose down
+```
+
 - 访问 SoybeanAdmin
 
 打开本地浏览器访问`http://localhost`
