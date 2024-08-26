@@ -1,6 +1,6 @@
-import { FaLocationArrow } from "react-icons/fa6";
+import { FaLocationArrow, FaLocationDot, FaPhone } from "react-icons/fa6";
 
-import { socialMedia } from "@/data";
+// import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
 
 const Footer = () => {
@@ -14,11 +14,19 @@ const Footer = () => {
           className="w-full h-full opacity-50 "
         />
       </div> */}
+      <div className="p-5">
+        <div className="flex items-center gap-2">
+          <FaLocationDot />地址：青岛市黄岛区长江国际801-2室
+        </div>
+        <div className="flex items-center gap-2">
+          <FaPhone />电话：18954286089
+        </div>
+      </div>
 
       <div className="flex flex-col items-center">
-        <a href="mailto:contact@jsmastery.pro">
+        <a href="tel1:18954286089">
           <MagicButton
-            title="Let's get in touch"
+            title="联系我们"
             icon={<FaLocationArrow />}
             position="right"
           />
@@ -28,10 +36,10 @@ const Footer = () => {
       
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
         <p className="md:text-base text-sm md:font-normal font-light">
-          Copyright © 2024 Adrian Hajdin
+          Copyright © 2024 青岛中奕铭
         </p>
 
-        <div className="flex items-center md:gap-3 gap-6">
+        {/* <div className="flex items-center md:gap-3 gap-6">
           {socialMedia.map((info) => (
             <div
               key={info.id}
@@ -40,7 +48,7 @@ const Footer = () => {
               <img src={info.img} alt="icons" width={20} height={20} />
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </footer>
   );

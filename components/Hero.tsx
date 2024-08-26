@@ -55,11 +55,6 @@ const Hero = () => {
 
       </div> */}
 
-      {/**
-       *  UI: grid
-       *  change bg color to bg-black-100 and reduce grid color from
-       *  0.2 to 0.03
-       */}
       <div
         className="h-screen w-full dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2]
        absolute top-0 left-0 flex items-center justify-center"
@@ -74,26 +69,21 @@ const Hero = () => {
         /> */}
       </div>
 
-      <div className="flex justify-center relative my-20 z-10">
-        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-          <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            青岛木追广告设计
+      <div className="h-full flex justify-center relative z-10">
+        <div className="h-full max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-between">
+          <p className="tracking-widest mt-4 mb-32 text-md text-center text-blue-100 max-w-80">
+            青岛中奕铭印务有限公司
           </p>
-
-          {/**
-           *  Link: https://ui.aceternity.com/components/text-generate-effect
-           *
-           *  change md:text-6xl, add more responsive code
-           */}
-          <TextGenerateEffect
+          
+          {/* <TextGenerateEffect
             words="Creative Design Concepts into User Expectation"
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
-          />
+          /> */}
 
-           <TypewriterEffectSmooth words={words} />
+          <TypewriterEffectSmooth words={words} />
 
-          <p className="text-center md:tracking-wider mb-10 text-sm md:text-lg lg:text-2xl">
-            我们致力于成为青岛乃至全国领先的广告设计公司，通过创新和卓越的设计服务，助力客户品牌成长，实现共赢
+          <p className="text-center md:tracking-wider mt-40 mb-20 text-md md:text-lg lg:text-2xl">
+            我们致力于成为青岛乃至全国领先的广告设计公司，通过创新和卓越的设计服务，助力客户品牌成长，实现价值共赢
           </p>
 
           <a href="#about">
