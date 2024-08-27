@@ -201,9 +201,9 @@ const SkeletonFour = () => {
           width="100"
           className="rounded-full h-10 w-10"
         />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
+        {/* <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
           王晓姣
-        </p>
+        </p> */}
         <p className="border border-red-500 bg-red-100 dark:bg-red-900/20 text-red-600 text-xs rounded-full px-2 py-0.5 mt-4">
           创意总监
         </p>
@@ -216,11 +216,11 @@ const SkeletonFour = () => {
           width="100"
           className="rounded-full h-10 w-10"
         />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
+        {/* <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
           李英泽
-        </p>
+        </p> */}
         <p className="border border-green-500 bg-green-100 dark:bg-green-900/20 text-green-600 text-xs rounded-full px-2 py-0.5 mt-4">
-          首席执行官
+          客户经理
         </p>
       </motion.div>
       <motion.div
@@ -234,9 +234,9 @@ const SkeletonFour = () => {
           width="100"
           className="rounded-full h-10 w-10"
         />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
+        {/* <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
           许咪咪
-        </p>
+        </p> */}
         <p className="border border-orange-500 bg-orange-100 dark:bg-orange-900/20 text-orange-600 text-xs rounded-full px-2 py-0.5 mt-4">
           艺术指导
         </p>

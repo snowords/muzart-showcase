@@ -22,18 +22,18 @@ const supabase = createClient();
 
 const RecentProjects = () => {
 
-  const [typeList, setTypeList] = useState([])
+  const [typeList, setTypeList] = useState<any[]>([])
 
   useEffect(() => {
     getTypeList()
   }, []);
 
   const getTypeList = async () => {
-    const { data } = await supabase.from('project-type').select('*')
+    const { data }: any = await supabase.from('project-type').select('*')
 
     const result: any = await supabase.from('project').select('*')
-    const formatList = data.map(t => {
-      const groupList = result.data.filter(a => a.typeId === t.key)
+    const formatList = data.map((t: any) => {
+      const groupList: any = result.data.filter((a: any) => a.typeId === t.key)
       return {
         key: t.key,
         label: t.label,
@@ -67,7 +67,7 @@ const RecentProjects = () => {
                 <Card>
                   <CardBody>
                     <BentoGrid className="max-w-4xl mx-auto">
-                      {tabData.groupList?.length > 0 ? tabData.groupList.map((list, i) => (
+                      {tabData.groupList?.length > 0 ? tabData.groupList.map((list: any, i: any) => (
                         <BentoGridItem
                           key={list.id}
                           title={list.name}

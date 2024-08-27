@@ -19,8 +19,8 @@ const CasePost = ({
   }
 }) => {
 
-  const [caseInfo, setCaseInfo] = useState({})
-  const [imageList, setImageList] = useState([])
+  const [caseInfo, setCaseInfo] = useState<any>({})
+  const [imageList, setImageList] = useState<any[]>([])
 
   useEffect(() => {
     if (params && params.key) {
@@ -42,7 +42,7 @@ const CasePost = ({
   }, [caseInfo])
 
   const getImageList = async () => {
-    const { data } = await supabase
+    const { data }: any = await supabase
       .storage
       .from('cloud-space')
       .list(caseInfo.group || '', {
