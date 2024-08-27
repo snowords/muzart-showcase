@@ -107,66 +107,76 @@ export const projects = [
 export const testimonials = [
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "与青岛中奕铭设计公司的合作非常顺利。他们不仅在设计理念上具有前瞻性，而且在项目执行上也非常专业和高效。我们的新办公室在他们的帮助下焕然一新，员工和客户都给予了高度评价。他们的服务让我们的品牌形象得到了显著提升，我强烈推荐他们给需要专业设计服务的朋友们。",
+    name: "周经理",
+    title: "卓越的设计，满意的服务",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "青岛中奕铭设计公司为我们的品牌形象提供了全新的设计方案，他们的创意和专业水平令人印象深刻。在整个合作过程中，设计师们总是耐心听取我们的意见，并提供切实可行的解决方案。他们的服务态度非常周到，确保每一个细节都达到我们的满意。我们对最终的设计成果感到非常满意，期待未来更多的合作。",
+    name: "吴经理",
+    title: "设计精湛，效果显著",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "在寻找能够提供全面活动策划和设计的公司时，我们选择了青岛中奕铭。他们的团队不仅在策划阶段表现出色，而且在执行阶段也展现了强大的执行力。他们为我们的活动提供了从创意构思到现场实施的一站式服务，确保了活动的每一个环节都能顺利进行。他们的专业服务让我们的活动取得了圆满成功。",
+    name: "陈经理",
+    title: "高效设计，超出预期",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "青岛中奕铭设计公司为我们的公司提供了全面的品牌设计服务，包括标志设计、网站设计和宣传材料设计。他们的设计理念新颖，能够准确把握我们的品牌定位和目标受众。他们的设计服务不仅提升了我们的品牌形象，也增强了客户对我们品牌的认知。他们的专业服务和创新设计为我们的品牌价值带来了显著的提升，我们对他们的工作成果感到非常满意。",
+    name: "徐经理",
+    title: "设计创新，提升品牌价值",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "青岛中奕铭广告活动设计公司为我们的新产品发布会提供了一流的设计服务。他们的设计方案新颖、专业，完全符合我们产品的高端定位。他们的团队非常注重沟通和反馈，确保了设计方案的每一版都能精准地满足我们的需求。最终的活动效果超出了我们的预期，赢得了客户和媒体的一致好评。",
+    name: "吴经理",
+    title: "专业设计，效果出众",
   },
 ];
 
 export const companies = [
   {
     id: 1,
-    name: "cloudinary",
-    img: "/cloud.svg",
-    nameImg: "/cloudName.svg",
+    name: "青岛城发集团",
+    img: "/company/1.png",
   },
   {
     id: 2,
-    name: "appwrite",
-    img: "/app.svg",
-    nameImg: "/appName.svg",
+    name: "平安银行",
+    img: "/company/2.png",
   },
   {
     id: 3,
-    name: "HOSTINGER",
-    img: "/host.svg",
-    nameImg: "/hostName.svg",
+    name: "国泰产险",
+    img: "/company/3.png",
   },
   {
     id: 4,
-    name: "stream",
-    img: "/s.svg",
-    nameImg: "/streamName.svg",
+    name: "必胜客",
+    img: "/company/4.png",
   },
   {
     id: 5,
-    name: "docker.",
-    img: "/dock.svg",
-    nameImg: "/dockerName.svg",
+    name: "肯德基",
+    img: "/company/5.png",
+  },
+  {
+    id: 6,
+    name: "恒安标准人寿",
+    img: "/company/6.png",
+  },
+  {
+    id: 7,
+    name: "中国烟草",
+    img: "/company/7.png",
+  },
+  {
+    id: 8,
+    name: "招商银行",
+    img: "/company/8.png",
   },
 ];
 

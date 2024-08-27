@@ -116,6 +116,7 @@ docker run -d -p 80:3000 muzart-showcase-image
 
 ```bash
 cd ./docker
+docker compose build
 docker compose up -d
 # 关闭
 docker compose down
